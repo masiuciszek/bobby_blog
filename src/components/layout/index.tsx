@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import GlobalStyles from './Global'
 import Seo from '../SEO/Seo'
 import { handleFlex } from '../styled/helpers'
+import Nav from '../pageElements/nav/Nav'
 
 interface Props {
   children: React.ReactNode
@@ -65,6 +66,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     <ThemeProvider theme={theme}>
       <Seo />
       <GlobalStyles />
+      <Nav />
       <Main>{children}</Main>
     </ThemeProvider>
   )
