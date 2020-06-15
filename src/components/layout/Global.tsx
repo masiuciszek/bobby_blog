@@ -1,18 +1,25 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
-*::before,*::after,* {
+    /* font-family: 'Bellota', cursive;
+
+font-family: 'Nunito', sans-serif; */
+
+  *::before,
+  *::after
+  ,* {
       margin: 0;
       padding: 0;
       box-sizing: inherit;
     }
+
     html {
       font-size: ${props => props.theme.appSize};
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Nunito', sans-serif;
     }
     body {
       box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Nunito', sans-serif;
       padding: 0;
       margin: 0;
       font-size: 1.5rem;
@@ -29,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
 
     h1{
       font-size: ${props => props.theme.size.h1};
-
+      font-family: 'Bellota', cursive;
     }
     h2{
       font-size: ${props => props.theme.size.h2};

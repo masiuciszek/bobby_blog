@@ -26,7 +26,7 @@ const StyledTitle = styled.div<StyledTitleProps>`
   color: ${({ theme, titleProps: { color } }) =>
     color ? color : theme.colors.white};
   background: ${({ titleProps: { bg } }) => bg && bg};
-  padding: 1rem 2rem;
+  padding: 1.5rem 2.6rem;
   width: 44em;
   text-align: center;
 `

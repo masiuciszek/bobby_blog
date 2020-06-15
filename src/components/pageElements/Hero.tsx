@@ -34,7 +34,7 @@ const Hero: React.FC<Props> = ({ className, children, img, large }) => {
 
 const HERO_QUERY = graphql`
   {
-    hero: file(relativePath: { eq: "blue.jpg" }) {
+    hero: file(relativePath: { eq: "paint.jpg" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_withWebp

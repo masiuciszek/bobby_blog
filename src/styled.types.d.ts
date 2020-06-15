@@ -13,6 +13,7 @@ declare module 'styled-components' {
       secondaryShadow: string
       black: string
       white: string
+      offWhite: string
     }
     size: {
       h1: string

@@ -7,6 +7,20 @@ module.exports = {
     twitterUsername: '@masiuciszek',
     image: '/images/icon.png',
     siteUrl: 'https://marcelable.com',
+    paths: [
+      {
+        name: 'about',
+        path: '/about',
+      },
+      {
+        name: 'blog',
+        path: '/blog',
+      },
+      {
+        name: 'contact',
+        path: '/contact',
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

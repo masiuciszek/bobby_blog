@@ -27,6 +27,7 @@ const theme: DefaultTheme = {
     secondaryShadow: 'rgba(47, 68, 92,.6)',
     black: '#030506',
     white: '#fff',
+    offWhite: '#F1EFEE',
   },
   brakePoints: {
     small: 400,
