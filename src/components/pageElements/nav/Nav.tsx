@@ -7,12 +7,21 @@ import MainNavList from './MainNavList'
 import SlideNavList from './SlideNavList'
 import { useLocation } from '@reach/router'
 import { handleFlex } from '../../styled/helpers'
-
+import { IFixedObject } from 'gatsby-background-image'
+import Img from 'gatsby-image'
 interface Path {
   name: string
   path: string
 }
 
+interface IconNode {
+  node: {
+    name: string
+    childImageSharp: {
+      fixed: IFixedObject
+    }
+  }
+}
 interface Query {
   site: {
     siteMetadata: {
@@ -20,22 +29,27 @@ interface Query {
       paths: Path[]
     }
   }
+  icons: {
+    edges: Array<IconNode>
+  }
 }
 
 const Nav: React.FC = () => {
-  const { site } = useStaticQuery<Query>(NAV_QUERY)
+  const { site, icons } = useStaticQuery<Query>(NAV_QUERY)
   const [on, toggle] = useToggle(false)
   const { pathname } = useLocation()
+  const [a, b] = icons.edges
 
   return (
     <NavStyles pathName={pathname}>
-      <Title>
+      <TitleWrapper>
         <h3>{site.siteMetadata.title}</h3>
-      </Title>
+        <Img fixed={a.node.childImageSharp.fixed} alt={a.node.name} />
+      </TitleWrapper>
       <MainNavList onPaths={site.siteMetadata.paths} />
-      {/* <SlideNavList onPaths={site.siteMetadata.paths} /> */}
+      <SlideNavList onPaths={site.siteMetadata.paths} on={on} />
       <div id="menuLink" onClick={toggle}>
-        <span>Menu</span>
+        <Img fixed={b.node.childImageSharp.fixed} alt={b.node.name} />
       </div>
     </NavStyles>
   )
@@ -55,6 +69,7 @@ const NavStyles = styled.nav<NavStylesProps>`
     position: absolute;
     top: 1rem;
     right: 1rem;
+    z-index: 2;
     cursor: pointer;
     display: none;
     ${below.medium`
@@ -63,12 +78,17 @@ const NavStyles = styled.nav<NavStylesProps>`
   }
 `
 
-const Title = styled.div`
+export const TitleWrapper = styled.div`
+  ${handleFlex('row', 'center', 'center')};
+  z-index: 3;
   h3 {
     font-size: 3rem;
-    cursor: pointer;
     padding: 0.5rem;
     font-family: 'Bellota', cursive;
+  }
+  img,
+  h3 {
+    cursor: pointer;
   }
 `
 
@@ -80,6 +100,22 @@ const NAV_QUERY = graphql`
         paths {
           name
           path
+        }
+      }
+    }
+    icons: allFile(
+      limit: 2
+      filter: { extension: { eq: "png" } }
+      sort: { fields: [name], order: DESC }
+    ) {
+      edges {
+        node {
+          name
+          childImageSharp {
+            fixed(width: 30, height: 30) {
+              ...GatsbyImageSharpFixed_tracedSVG
+            }
+          }
         }
       }
     }

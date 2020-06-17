@@ -3,15 +3,15 @@
     "develop": {
       "plugins": [
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
         },
         {
@@ -25,7 +25,7 @@
       ],
       "presets": [
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": []
           }
@@ -39,15 +39,15 @@
     "develop-html": {
       "plugins": [
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
         },
         {
@@ -61,7 +61,7 @@
       ],
       "presets": [
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": []
           }
@@ -75,15 +75,15 @@
     "build-html": {
       "plugins": [
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
         },
         {
@@ -97,7 +97,7 @@
       ],
       "presets": [
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": []
           }
@@ -111,15 +111,15 @@
     "build-javascript": {
       "plugins": [
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
           "options": {}
         },
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
           "options": {}
         },
         {
@@ -133,7 +133,7 @@
       ],
       "presets": [
         {
-          "name": "/Users/masiuciszek/web-dev/myWebProj/marcellable2.0/node_modules/@babel/preset-typescript/lib/index.js",
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/preset-typescript/lib/index.js",
           "options": {
             "plugins": []
           }

@@ -45,8 +45,8 @@ const HERO_QUERY = graphql`
 `
 export default styled(Hero)`
   ${handleFlex('column', 'center', 'center')};
-  min-height: ${props => (props.large ? '100vh' : '50vh')};
+  min-height: ${props => (props.large ? 'calc(90vh - 90px)' : '50vh')};
   background-position: bottom center;
   background-size: cover;
-  opacity: 1 !important;
+  /* opacity: 1 !important; */
 `

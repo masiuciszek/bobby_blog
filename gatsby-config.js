@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `I am Jon`,
     titleTemplate: '%s · Jonkri Master',
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `My simple blog about me and what I do`,
     author: `@marcellCiszek`,
     twitterUsername: '@masiuciszek',
     image: '/images/icon.png',

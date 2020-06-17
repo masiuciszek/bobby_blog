@@ -15,7 +15,7 @@ export const LinkStyled = styled(Link)`
   &:hover {
     color: ${props => props.theme.colors.white};
     background: ${props => props.theme.colors.secondaryShadow};
-    border: 2px solid ${props => props.theme.colors.white};
+    /* border: 2px solid ${props => props.theme.colors.white}; */
     width: 12.6rem;
   }
   &:active {

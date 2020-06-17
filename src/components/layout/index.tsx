@@ -5,6 +5,7 @@ import GlobalStyles from './Global'
 import Seo from '../SEO/Seo'
 import { handleFlex } from '../styled/helpers'
 import Nav from '../pageElements/nav/Nav'
+import Footer from '../pageElements/footer/Footer'
 
 interface Props {
   children: React.ReactNode
@@ -69,6 +70,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       <GlobalStyles />
       <Nav />
       <Main>{children}</Main>
+      <Footer />
     </ThemeProvider>
   )
 }

@@ -8,6 +8,7 @@ interface Props {
   color?: string
   bg?: string
   cta?: boolean
+  xl?: boolean
   ctaText?: string
   ctaPath?: string
 }
@@ -19,6 +20,7 @@ interface StyledTitleProps {
     cta?: boolean
     ctaText?: string
     ctaPath?: string
+    xl?: boolean
   }
 }
 
@@ -27,8 +29,14 @@ const StyledTitle = styled.div<StyledTitleProps>`
     color ? color : theme.colors.white};
   background: ${({ titleProps: { bg } }) => bg && bg};
   padding: 1.5rem 2.6rem;
-  width: 44em;
+  width: 64em;
   text-align: center;
+  h1 {
+    font-size: ${({ titleProps: { xl } }) => (xl ? '8rem' : '5rem')};
+  }
+  h3 {
+    font-size: ${({ titleProps: { xl } }) => (xl ? '6rem' : '4rem')};
+  }
 `
 
 const Title: React.FC<Props> = ({
@@ -39,9 +47,10 @@ const Title: React.FC<Props> = ({
   cta,
   ctaPath,
   ctaText,
+  xl,
 }) => {
   return (
-    <StyledTitle titleProps={{ color, bg, cta, ctaPath, ctaText }}>
+    <StyledTitle titleProps={{ color, bg, cta, ctaPath, ctaText, xl }}>
       <h1>{title}</h1>
       {subTitle && <h3>{subTitle}</h3>}
       {cta && (
