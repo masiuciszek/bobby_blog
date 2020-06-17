@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/layout'
+import Layout, { Page } from '../components/layout'
 import Hero from '../components/pageElements/Hero'
 import Title from '../components/pageElements/Title'
 

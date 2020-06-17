@@ -65,6 +65,8 @@ interface StyledFooterProps {
 const StyledFooter = styled.footer<StyledFooterProps>`
   ${handleFlex('row', 'space-between', 'center')};
   padding: 1.25rem;
+  height: 100%;
+
   background: ${({
     theme: {
       colors: { white, offWhite },
@@ -79,6 +81,7 @@ const StyledFooter = styled.footer<StyledFooterProps>`
 const FooterTitleWrapper = styled(TitleWrapper)`
   width: 60%;
   justify-content: flex-start;
+  z-index: 0;
   ${below.medium`
     justify-content: center;
     width: 100%;

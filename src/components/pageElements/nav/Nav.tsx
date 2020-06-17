@@ -9,6 +9,7 @@ import { useLocation } from '@reach/router'
 import { handleFlex } from '../../styled/helpers'
 import { IFixedObject } from 'gatsby-background-image'
 import Img from 'gatsby-image'
+import InfoSlide from './InfoSlide'
 interface Path {
   name: string
   path: string
@@ -37,6 +38,7 @@ interface Query {
 const Nav: React.FC = () => {
   const { site, icons } = useStaticQuery<Query>(NAV_QUERY)
   const [on, toggle] = useToggle(false)
+  const [onInfo, toggleInfo] = useToggle(false)
   const { pathname } = useLocation()
   const [a, b] = icons.edges
 
@@ -44,8 +46,11 @@ const Nav: React.FC = () => {
     <NavStyles pathName={pathname}>
       <TitleWrapper>
         <h3>{site.siteMetadata.title}</h3>
-        <Img fixed={b.node.childImageSharp.fixed} alt={b.node.name} />
+        <span onClick={toggleInfo}>
+          <Img fixed={b.node.childImageSharp.fixed} alt={b.node.name} />
+        </span>
       </TitleWrapper>
+      <InfoSlide on={onInfo} />
       <MainNavList onPaths={site.siteMetadata.paths} />
       <SlideNavList onPaths={site.siteMetadata.paths} on={on} />
       <div id="menuLink" onClick={toggle}>
@@ -61,6 +66,7 @@ interface NavStylesProps {
 
 const NavStyles = styled.nav<NavStylesProps>`
   padding: 1rem;
+  height: 90px;
   background: ${({ theme, pathName }) =>
     pathName === '/' ? theme.colors.offWhite : theme.colors.white};
   position: relative;
@@ -69,7 +75,7 @@ const NavStyles = styled.nav<NavStylesProps>`
     position: absolute;
     top: 1rem;
     right: 1rem;
-    z-index: 2;
+    z-index: 4;
     cursor: pointer;
     display: none;
     ${below.medium`
@@ -80,7 +86,7 @@ const NavStyles = styled.nav<NavStylesProps>`
 
 export const TitleWrapper = styled.div`
   ${handleFlex('row', 'center', 'center')};
-  z-index: 3;
+  z-index: 5;
   h3 {
     font-size: 3rem;
     padding: 0.5rem;

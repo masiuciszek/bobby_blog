@@ -3,6 +3,7 @@ module.exports = {
     title: `I am Jon`,
     titleTemplate: '%s · Jonkri Master',
     description: `My simple blog about me and what I do`,
+    about: `I am a programmer from Gothenburg whoa has a big passion for functional programing. My strengths and what I really likes the most is Javascript and Haskell`,
     author: `@marcellCiszek`,
     twitterUsername: '@masiuciszek',
     image: '/images/icon.png',

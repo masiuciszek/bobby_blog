@@ -13,7 +13,7 @@ interface Props {
 }
 
 const AnimatedMenu = styled(animated.ul)`
-  height: 100vh;
+  min-height: 120vh;
   width: 100%;
   background: ${({ theme }) => theme.colors.primaryShadow};
   position: absolute;
@@ -21,7 +21,7 @@ const AnimatedMenu = styled(animated.ul)`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 3;
   ${handleFlex('column', 'center', 'center')};
 
   li {
