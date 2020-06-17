@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useSpring, animated } from 'react-spring'
 import { handleFlex } from '../../styled/helpers'
 import { Link } from 'gatsby'
+import { above, below } from '../../styled/media'
 interface Path {
   name: string
   path: string
@@ -14,6 +15,7 @@ interface Props {
 
 const AnimatedMenu = styled(animated.ul)`
   min-height: 120vh;
+  /* min-height: 120vh; */
   width: 100%;
   background: ${({ theme }) => theme.colors.primaryShadow};
   position: absolute;
@@ -29,6 +31,9 @@ const AnimatedMenu = styled(animated.ul)`
     padding: 1rem;
     text-align: center;
     margin: 1rem;
+    &:last-child {
+      margin-bottom: 50rem;
+    }
   }
   a {
     display: block;
@@ -41,6 +46,12 @@ const AnimatedMenu = styled(animated.ul)`
       text-shadow: 1px 1px 1px ${({ theme }) => theme.colors.offWhite};
     }
   }
+  ${above.medium`
+    display: none;
+  `}
+  ${below.medium`
+    min-height: 160vh;
+  `}
 `
 
 const SlideNavList: React.FC<Props> = ({ onPaths, on }) => {

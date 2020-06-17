@@ -75,6 +75,7 @@ const StyledFooter = styled.footer<StyledFooterProps>`
   }) => (pathname === '/' ? offWhite : white)};
   ${below.medium`
     ${handleFlex('column', 'center', 'center')};
+
   `}
 `
 

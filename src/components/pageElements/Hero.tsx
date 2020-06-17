@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import BackgroundImage, { IFluidObject } from 'gatsby-background-image'
 import { handleFlex } from '../styled/helpers'
+import { below } from '../styled/media'
 interface Props {
   className: string
   children: React.ReactNode
@@ -45,8 +46,10 @@ const HERO_QUERY = graphql`
 `
 export default styled(Hero)`
   ${handleFlex('column', 'center', 'center')};
-  min-height: ${props => (props.large ? `calc(100vh - 92px)` : `50vh`)};
+  /* min-height: ${props => (props.large ? `calc(100vh - 92px)` : `50vh`)}; */
+  min-height: ${props => (props.large ? `100vh` : `50vh`)};
   background-position: bottom center;
   background-size: cover;
   /* opacity: 1 !important; */
+
 `

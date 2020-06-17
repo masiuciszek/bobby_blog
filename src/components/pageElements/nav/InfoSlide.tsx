@@ -5,6 +5,7 @@ import { handleFlex } from '../../styled/helpers'
 import { graphql, useStaticQuery } from 'gatsby'
 import { IFixedObject } from 'gatsby-background-image'
 import SocialList from '../footer/SocialList'
+import { below } from '../../styled/media'
 
 interface Props {
   on: boolean
@@ -39,8 +40,9 @@ interface InfoQuery {
 }
 
 const InfoSlide: React.FC<Props> = ({ on }) => {
-  const { x } = useSpring({
+  const { x, opacity } = useSpring({
     x: on ? 0 : 100,
+    opacity: on ? 1 : 0,
   })
   const {
     site: {
@@ -53,6 +55,7 @@ const InfoSlide: React.FC<Props> = ({ on }) => {
     <StyledInfoSlide
       style={{
         transform: x.interpolate(x => `translate3d(${x * -1}%,0,0)`),
+        opacity,
       }}
     >
       <Body>
@@ -74,6 +77,10 @@ const StyledInfoSlide = styled(animated.div)`
   z-index: 2;
   background: ${({ theme }) => theme.colors.white};
   ${handleFlex('column', 'center', 'center')};
+  ${below.medium`
+    width: 75%;
+    min-height: 160vh;
+  `}
 `
 
 const Body = styled.div`
