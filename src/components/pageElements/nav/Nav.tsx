@@ -44,12 +44,12 @@ const Nav: React.FC = () => {
     <NavStyles pathName={pathname}>
       <TitleWrapper>
         <h3>{site.siteMetadata.title}</h3>
-        <Img fixed={a.node.childImageSharp.fixed} alt={a.node.name} />
+        <Img fixed={b.node.childImageSharp.fixed} alt={b.node.name} />
       </TitleWrapper>
       <MainNavList onPaths={site.siteMetadata.paths} />
       <SlideNavList onPaths={site.siteMetadata.paths} on={on} />
       <div id="menuLink" onClick={toggle}>
-        <Img fixed={b.node.childImageSharp.fixed} alt={b.node.name} />
+        <Img fixed={a.node.childImageSharp.fixed} alt={a.node.name} />
       </div>
     </NavStyles>
   )
@@ -103,11 +103,8 @@ const NAV_QUERY = graphql`
         }
       }
     }
-    icons: allFile(
-      limit: 2
-      filter: { extension: { eq: "png" } }
-      sort: { fields: [name], order: DESC }
-    ) {
+
+    icons: allFile(filter: { relativeDirectory: { eq: "nav" } }) {
       edges {
         node {
           name

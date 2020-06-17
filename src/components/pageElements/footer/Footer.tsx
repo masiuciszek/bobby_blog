@@ -3,16 +3,45 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { useLocation } from '@reach/router'
 import styled from 'styled-components'
 import { TitleWrapper } from '../nav/Nav'
+import { IFixedObject } from 'gatsby-background-image'
+import Img from 'gatsby-image'
+import { handleFlex } from '../../styled/helpers'
+
+interface Path {
+  name: string
+  path: string
+}
+
+interface IconNode {
+  node: {
+    name: string
+    childImageSharp: {
+      fixed: IFixedObject
+    }
+  }
+}
+interface FooterQuery {
+  site: {
+    siteMetadata: {
+      title: string
+      paths: Path[]
+    }
+  }
+  icons: {
+    edges: IconNode[]
+  }
+}
 
 interface Props {}
 
 const Footer: React.FC<Props> = () => {
   const { pathname } = useLocation()
-  const x = useStaticQuery(FOOTER_QUERY)
+  const { site, icons } = useStaticQuery<FooterQuery>(FOOTER_QUERY)
+
   return (
     <StyledFooter onPath={pathname}>
       <TitleWrapper>
-        <h3> Legia CWSKS </h3>
+        <h3> {site.siteMetadata.title} </h3>
       </TitleWrapper>
     </StyledFooter>
   )
@@ -21,7 +50,9 @@ const Footer: React.FC<Props> = () => {
 interface StyledFooterProps {
   onPath: string
 }
+
 const StyledFooter = styled.footer<StyledFooterProps>`
+  ${handleFlex('row', 'space-between', 'center')};
   padding: 1.25rem;
   background: ${({
     theme: {
@@ -43,7 +74,7 @@ const FOOTER_QUERY = graphql`
       }
     }
 
-    allFile(filter: { relativeDirectory: { eq: "social" } }) {
+    icons: allFile(filter: { relativeDirectory: { eq: "social" } }) {
       edges {
         node {
           name
