@@ -21,6 +21,7 @@ font-family: 'Nunito', sans-serif; */
       box-sizing: border-box;
       font-family: 'Nunito', sans-serif;
       padding: 0;
+      height: 100%;
       margin: 0;
       font-size: 1.5rem;
       line-height: 2;
