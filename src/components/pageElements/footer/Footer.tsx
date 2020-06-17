@@ -4,8 +4,10 @@ import { useLocation } from '@reach/router'
 import styled from 'styled-components'
 import { TitleWrapper } from '../nav/Nav'
 import { IFixedObject } from 'gatsby-background-image'
-import Img from 'gatsby-image'
 import { handleFlex } from '../../styled/helpers'
+import FooterList from './FooterList'
+import SocialList from './SocialList'
+import { below, above } from '../../styled/media'
 
 interface Path {
   name: string
@@ -15,6 +17,7 @@ interface Path {
 interface IconNode {
   node: {
     name: string
+
     childImageSharp: {
       fixed: IFixedObject
     }
@@ -22,6 +25,7 @@ interface IconNode {
 }
 interface FooterQuery {
   site: {
+    date: string
     siteMetadata: {
       title: string
       paths: Path[]
@@ -39,16 +43,23 @@ const Footer: React.FC<Props> = () => {
   const { site, icons } = useStaticQuery<FooterQuery>(FOOTER_QUERY)
 
   return (
-    <StyledFooter onPath={pathname}>
-      <TitleWrapper>
-        <h3> {site.siteMetadata.title} </h3>
-      </TitleWrapper>
+    <StyledFooter pathname={pathname}>
+      <FooterTitleWrapper>
+        <h3>
+          {' '}
+          {site.siteMetadata.title} <small>&#169; {site.date}</small>
+        </h3>
+      </FooterTitleWrapper>
+      <ListsWrapper>
+        <FooterList onItems={site.siteMetadata.paths} />
+        <SocialList onSocialIcons={icons.edges} />
+      </ListsWrapper>
     </StyledFooter>
   )
 }
 
 interface StyledFooterProps {
-  onPath: string
+  pathname: string
 }
 
 const StyledFooter = styled.footer<StyledFooterProps>`
@@ -58,13 +69,34 @@ const StyledFooter = styled.footer<StyledFooterProps>`
     theme: {
       colors: { white, offWhite },
     },
-    onPath,
-  }) => (onPath === '/' ? offWhite : white)};
+    pathname,
+  }) => (pathname === '/' ? offWhite : white)};
+  ${below.medium`
+    ${handleFlex('column', 'center', 'center')};
+  `}
+`
+
+const FooterTitleWrapper = styled(TitleWrapper)`
+  width: 60%;
+  justify-content: flex-start;
+  ${below.medium`
+    justify-content: center;
+    width: 100%;
+  `}
+`
+
+const ListsWrapper = styled.div`
+  width: 40%;
+
+  ${above.medium`
+    ${handleFlex('column', 'center', 'flex-end')};
+  `}
 `
 
 const FOOTER_QUERY = graphql`
   {
     site {
+      date: buildTime(formatString: "YYYY")
       siteMetadata {
         title
         paths {
@@ -78,6 +110,7 @@ const FOOTER_QUERY = graphql`
       edges {
         node {
           name
+
           childImageSharp {
             fixed(width: 30, height: 30) {
               ...GatsbyImageSharpFixed_tracedSVG

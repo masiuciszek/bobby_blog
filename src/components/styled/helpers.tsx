@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { css } from 'styled-components'
 
-type FlexDirection = 'row' | 'column'
+type FlexDirection = 'row' | 'column' | 'column-reverse' | 'row-reverse'
 type JustifyContent =
   | 'center'
   | 'flex-start'
