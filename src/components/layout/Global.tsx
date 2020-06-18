@@ -32,7 +32,7 @@ font-family: 'Nunito', sans-serif; */
     }
     a {
     text-decoration: none;
-    color: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.primary};
     font-size: ${props => props.theme.size.a};
     }
 

@@ -11,6 +11,7 @@ exports.components = {
   "component---src-posts-fourth-post-index-mdx": () => import("./../src/posts/fourth-post/index.mdx" /* webpackChunkName: "component---src-posts-fourth-post-index-mdx" */),
   "component---src-posts-second-post-index-mdx": () => import("./../src/posts/second-post/index.mdx" /* webpackChunkName: "component---src-posts-second-post-index-mdx" */),
   "component---src-posts-third-post-index-mdx": () => import("./../src/posts/third-post/index.mdx" /* webpackChunkName: "component---src-posts-third-post-index-mdx" */),
+  "component---src-templates-blog-list-tsx": () => import("./../src/templates/blog-list.tsx" /* webpackChunkName: "component---src-templates-blog-list-tsx" */),
   "component---src-templates-blog-post-tsx": () => import("./../src/templates/blog-post.tsx" /* webpackChunkName: "component---src-templates-blog-post-tsx" */)
 }
 

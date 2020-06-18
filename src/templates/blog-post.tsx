@@ -3,6 +3,7 @@ import { PageProps, graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import styled from 'styled-components'
 import Layout, { Page } from '../components/layout'
+import { handleFlex } from '../components/styled/helpers'
 interface FrontMatter {
   title: string
   date: string
@@ -89,11 +90,17 @@ const BlogHead = styled.div`
 `
 
 const NavigationWrapper = styled.div`
+  ${handleFlex('row', 'space-around', 'center')};
+  width: 100%;
   a {
     color: ${({ theme }) => theme.colors.primary};
     padding: 1rem;
     font-size: 2.3rem;
-    transition: ${({ theme }) => theme.transition.mainTransition};
+    transition: ${({ theme }) => theme.transition.quickTransition};
+    &:hover {
+      color: ${({ theme }) => theme.colors.offWhite};
+      text-shadow: 1px 1px 2px ${({ theme }) => theme.colors.primary};
+    }
   }
 `
 

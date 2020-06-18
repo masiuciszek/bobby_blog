@@ -14,6 +14,7 @@ exports.components = {
   "component---src-posts-fourth-post-index-mdx": hot(preferDefault(require("/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/src/posts/fourth-post/index.mdx"))),
   "component---src-posts-second-post-index-mdx": hot(preferDefault(require("/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/src/posts/second-post/index.mdx"))),
   "component---src-posts-third-post-index-mdx": hot(preferDefault(require("/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/src/posts/third-post/index.mdx"))),
+  "component---src-templates-blog-list-tsx": hot(preferDefault(require("/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/src/templates/blog-list.tsx"))),
   "component---src-templates-blog-post-tsx": hot(preferDefault(require("/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/src/templates/blog-post.tsx")))
 }
 
