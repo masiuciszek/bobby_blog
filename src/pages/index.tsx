@@ -9,12 +9,19 @@ import { handleFlex } from '../components/styled/helpers'
 const IndexPage = () => (
   <Layout>
     <Hero className="Home" large>
-      <Title xl title="Hello" subTitle="I am Jon" bg="rgba(0,0,0,0.4)" cta />
+      <Title xl title="Hello" subTitle="I am Jon" cta color="#031326" />
     </Hero>
+
     {/* <div style={{ height: '150px' }} /> */}
-    <PushDown />
   </Layout>
 )
+
+const TestWrapper = styled.div`
+  min-height: 100vh;
+  ${below.medium`
+    height: 120vh;
+  `}
+`
 
 const PushDown = styled.div`
   display: none;

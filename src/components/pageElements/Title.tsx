@@ -37,6 +37,11 @@ const StyledTitle = styled.div<StyledTitleProps>`
   h3 {
     font-size: ${({ titleProps: { xl } }) => (xl ? '6rem' : '4rem')};
   }
+  h1,
+  h3 {
+    text-shadow: ${({ theme: { colors }, titleProps: { color } }) =>
+      color && `3px 2px 3px ${colors.offWhite}`};
+  }
 `
 
 const Title: React.FC<Props> = ({

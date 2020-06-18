@@ -14,11 +14,11 @@ interface Props {
 }
 
 const AnimatedMenu = styled(animated.ul)`
-  min-height: 120vh;
-  /* min-height: 120vh; */
+  min-height: 100vh;
+
   width: 100%;
   background: ${({ theme }) => theme.colors.primaryShadow};
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -31,9 +31,6 @@ const AnimatedMenu = styled(animated.ul)`
     padding: 1rem;
     text-align: center;
     margin: 1rem;
-    &:last-child {
-      margin-bottom: 50rem;
-    }
   }
   a {
     display: block;
@@ -49,19 +46,18 @@ const AnimatedMenu = styled(animated.ul)`
   ${above.medium`
     display: none;
   `}
-  ${below.medium`
-    min-height: 160vh;
-  `}
 `
 
 const SlideNavList: React.FC<Props> = ({ onPaths, on }) => {
-  const { x } = useSpring({
+  const { x, opacity } = useSpring({
     x: on ? 0 : 100,
+    opacity: on ? 1 : 0,
   })
   return (
     <AnimatedMenu
       style={{
         transform: x.interpolate(x => `translate3d(${x * 1}%,0,0)`),
+        opacity,
       }}
     >
       {onPaths.map(({ path, name }) => (

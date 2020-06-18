@@ -68,18 +68,17 @@ const InfoSlide: React.FC<Props> = ({ on }) => {
 }
 
 const StyledInfoSlide = styled(animated.div)`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  min-height: 120vh;
+  min-height: 100vh;
   width: 40%;
   z-index: 2;
   background: ${({ theme }) => theme.colors.white};
   ${handleFlex('column', 'center', 'center')};
   ${below.medium`
     width: 75%;
-    min-height: 160vh;
   `}
 `
 
@@ -87,6 +86,8 @@ const Body = styled.div`
   height: 60%;
   width: 100%;
   padding: 3rem 0.5rem;
+
+  ${handleFlex('column', 'center', 'center')};
   p {
     padding: 3rem 1rem;
     text-align: center;
