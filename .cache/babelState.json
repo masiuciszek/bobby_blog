@@ -15,6 +15,10 @@
           "options": {}
         },
         {
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
+          "options": {}
+        },
+        {
           "name": "babel-plugin-styled-components",
           "stage": "develop",
           "options": {
@@ -48,6 +52,10 @@
         },
         {
           "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
           "options": {}
         },
         {
@@ -87,6 +95,10 @@
           "options": {}
         },
         {
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
+          "options": {}
+        },
+        {
           "name": "babel-plugin-styled-components",
           "stage": "build-html",
           "options": {
@@ -120,6 +132,10 @@
         },
         {
           "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/node_modules/@babel/plugin-proposal-object-rest-spread/lib/index.js",
           "options": {}
         },
         {

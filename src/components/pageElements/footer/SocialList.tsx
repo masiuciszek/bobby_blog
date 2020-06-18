@@ -32,7 +32,7 @@ const SocialList: React.FC<Props> = ({ onSocialIcons }) => {
       case 'marcellable':
         return 'https://marcellable.com'
       default:
-        return 'https://github.com/jonkri'
+        return 'https://gitlab.com/jonkri'
     }
   }
 

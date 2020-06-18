@@ -86,7 +86,6 @@ const Body = styled.div`
   height: 60%;
   width: 100%;
   padding: 3rem 0.5rem;
-
   ${handleFlex('column', 'center', 'center')};
   p {
     padding: 3rem 1rem;
