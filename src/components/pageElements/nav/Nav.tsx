@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 import useToggle from '../../../hooks/useToggle'
 import { below } from '../../styled/media'
 import MainNavList from './MainNavList'
@@ -45,7 +45,9 @@ const Nav: React.FC = () => {
   return (
     <NavStyles pathName={pathname}>
       <TitleWrapper>
-        <h3>{site.siteMetadata.title}</h3>
+        <Link to="/" id="navTitle">
+          <h3>{site.siteMetadata.title}</h3>
+        </Link>
         <span onClick={toggleInfo}>
           <Img fixed={b.node.childImageSharp.fixed} alt={b.node.name} />
         </span>
@@ -87,10 +89,12 @@ const NavStyles = styled.nav<NavStylesProps>`
 export const TitleWrapper = styled.div`
   ${handleFlex('row', 'center', 'center')};
   z-index: 5;
+  #navTitle,
   h3 {
     font-size: 3rem;
     padding: 0.5rem;
     font-family: 'Bellota', cursive;
+    color: ${({ theme: { colors } }) => colors.primary};
   }
   img,
   h3 {

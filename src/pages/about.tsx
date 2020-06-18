@@ -1,14 +1,14 @@
-import * as React from "react"
-import { PageProps } from "gatsby"
+import * as React from 'react'
+import { PageProps } from 'gatsby'
+import Layout from '../components/layout'
 
 interface Props {}
 
 const About: React.FC<PageProps<Props>> = () => {
   return (
-    <div>
-      {" "}
-      <h1> Legia CWSKS </h1>{" "}
-    </div>
+    <Layout>
+      <h1> About Page </h1>
+    </Layout>
   )
 }
 export default About

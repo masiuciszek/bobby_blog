@@ -26,7 +26,7 @@ const SocialList: React.FC<Props> = ({ onSocialIcons }) => {
   const handleHref = (imgName: string) => {
     switch (imgName) {
       case 'jonkri':
-        return 'https://github.com/jonkri'
+        return 'https://gitlab.com/jonkri'
       case 'avancera':
         return 'https://avancera.app/'
       case 'marcellable':
