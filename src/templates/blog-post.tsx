@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { PageProps, graphql } from 'gatsby'
+import { PageProps, graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import styled from 'styled-components'
 import Layout, { Page } from '../components/layout'
@@ -16,16 +16,27 @@ interface Mdx {
   body: string
 }
 
+interface PrevNextData {
+  id: string
+  excerpt: string
+  body: string
+  frontmatter: FrontMatter
+}
+interface PageContext {
+  postSlug: string
+  prev: PrevNextData
+  next: PrevNextData
+}
+
 interface Props extends PageProps {
   data: {
     mdx: Mdx
   }
-  pageContext: {
-    postSlug: string
-  }
+  pageContext: PageContext
 }
 
 const BlogPostTemplate: React.FC<Props> = ({ data, pageContext }) => {
+  const { prev, next } = pageContext
   const {
     mdx: {
       frontmatter: { title, date, spoiler },
@@ -40,6 +51,18 @@ const BlogPostTemplate: React.FC<Props> = ({ data, pageContext }) => {
           <strong>{date}</strong>
         </BlogHead>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        <NavigationWrapper>
+          {prev && (
+            <Link to={`/blog${prev.frontmatter.slug}`}>
+              ← {prev.frontmatter.title}
+            </Link>
+          )}
+          {next && (
+            <Link to={`/blog${next.frontmatter.slug}`}>
+              {next.frontmatter.title} →
+            </Link>
+          )}
+        </NavigationWrapper>
       </BlogStyles>
     </Layout>
   )
@@ -62,6 +85,15 @@ const BlogHead = styled.div`
   }
   strong {
     display: block;
+  }
+`
+
+const NavigationWrapper = styled.div`
+  a {
+    color: ${({ theme }) => theme.colors.primary};
+    padding: 1rem;
+    font-size: 2.3rem;
+    transition: ${({ theme }) => theme.transition.mainTransition};
   }
 `
 

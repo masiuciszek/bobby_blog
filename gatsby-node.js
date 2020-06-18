@@ -9,7 +9,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       {
-        allMdx {
+        allMdx(sort: { order: ASC, fields: [frontmatter___date] }) {
           edges {
             node {
               id
@@ -39,6 +39,8 @@ exports.createPages = async ({ graphql, actions }) => {
       component: blogPostTemplate,
       context: {
         postSlug: slug,
+        prev: index === 0 ? null : posts[index - 1].node,
+        next: index === posts.length - 1 ? null : posts[index + 1].node,
       },
     })
   })
