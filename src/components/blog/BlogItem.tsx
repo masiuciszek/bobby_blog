@@ -36,7 +36,13 @@ const BlogItemStyles = styled.li`
 
     h3 {
       font-size: 4rem;
+      color: ${({ theme: { colors } }) => colors.primary};
     }
+  }
+  h3,
+  strong,
+  p {
+    color: ${({ theme: { colors } }) => colors.primary};
   }
 `
 

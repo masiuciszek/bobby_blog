@@ -40,12 +40,11 @@ const BlogList: React.FC<Props> = ({ data, pageContext }) => {
   const isLast = currentPage === numPages
   const prevPage = currentPage - 1 === 1 ? '' : (currentPage - 1).toString()
   const nextPage = (currentPage + 1).toString()
-  console.log(currentPage + 1)
 
   return (
     <Layout>
       <Page>
-        <Title title="Blog Posts" color="#031326" />
+        <Title title="Blog Posts" />
         <BlogListStyles>
           {data.allMdx.edges.map(({ node }) => (
             <BlogItem key={node.id} data={node.frontmatter} />

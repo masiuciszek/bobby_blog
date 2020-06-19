@@ -26,6 +26,7 @@ font-family: 'Nunito', sans-serif; */
       margin: 0;
       font-size: 1.5rem;
       line-height: 2;
+      background: ${({ theme: { colors } }) => colors.white}
     }
     ul{
       list-style:none;

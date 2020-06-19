@@ -74,6 +74,7 @@ const BlogStyles = styled(Page)`
   p {
     font-size: 18px;
     margin: 2rem 0;
+    color: ${({ theme }) => theme.colors.primary};
   }
 `
 
@@ -83,9 +84,11 @@ const BlogHead = styled.div`
   width: 100%;
   #blogTitle {
     margin-right: auto;
+    color: ${({ theme }) => theme.colors.primary};
   }
   strong {
     display: block;
+    color: ${({ theme }) => theme.colors.primary};
   }
 `
 

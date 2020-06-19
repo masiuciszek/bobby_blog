@@ -90,6 +90,7 @@ const Body = styled.div`
   p {
     padding: 3rem 1rem;
     text-align: center;
+    color: ${({ theme }) => theme.colors.primary};
   }
 `
 

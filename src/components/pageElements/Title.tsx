@@ -26,7 +26,7 @@ interface StyledTitleProps {
 
 const StyledTitle = styled.div<StyledTitleProps>`
   color: ${({ theme, titleProps: { color } }) =>
-    color ? color : theme.colors.white};
+    color ? color : theme.colors.primary};
   background: ${({ titleProps: { bg } }) => bg && bg};
   padding: 1.5rem 2.6rem;
   width: 64em;
