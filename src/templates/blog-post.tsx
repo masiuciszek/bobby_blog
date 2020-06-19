@@ -95,11 +95,29 @@ const NavigationWrapper = styled.div`
   a {
     color: ${({ theme }) => theme.colors.primary};
     padding: 1rem;
+    display: block;
     font-size: 2.3rem;
     transition: ${({ theme }) => theme.transition.quickTransition};
+    position: relative;
+    &:after {
+      content: '';
+      height: 0.2rem;
+      background: ${({ theme }) => theme.colors.primary};
+      width: 0;
+      padding: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: ${({ theme }) => theme.transition.secondaryTransition};
+    }
+
     &:hover {
       color: ${({ theme }) => theme.colors.offWhite};
       text-shadow: 1px 1px 2px ${({ theme }) => theme.colors.primary};
+      &:after {
+        width: 100%;
+        padding: 0.2rem;
+      }
     }
   }
 `

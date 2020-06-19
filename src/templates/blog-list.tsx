@@ -56,18 +56,17 @@ const BlogList: React.FC<Props> = ({ data, pageContext }) => {
           {!isFirst && (
             <Link to={`/blog/${prevPage}`} rel="prev" id="prev">
               {' '}
-              Prev{' '}
+              ← Prev
             </Link>
           )}
           {Array.from({ length: numPages }, (_, i) => (
             <li id="middle-link" key={`pagination-number${i + 1}`}>
               <Link
                 to={`/blog/${i === 0 ? '' : i + 1}`}
+                id={i + 1 !== currentPage ? 'numLink' : ''}
                 style={{
-                  margin: 5,
-                  padding: 5,
                   color: i + 1 === currentPage ? '#ffffff' : '',
-                  background: i + 1 === currentPage ? '#2c73d2' : '',
+                  background: i + 1 === currentPage ? '#172C42' : '',
                 }}
               >
                 {i + 1}
@@ -76,7 +75,7 @@ const BlogList: React.FC<Props> = ({ data, pageContext }) => {
           ))}
           {!isLast && (
             <Link to={`/blog/${nextPage}`} rel="next" id="next">
-              next
+              next →
             </Link>
           )}
         </Pagination>
@@ -91,16 +90,60 @@ const BlogListStyles = styled.ul`
   ${handleFlex('column', 'center', 'center')};
 `
 
-const Pagination = styled.div`
+const Pagination = styled.ul`
   ${handleFlex('row', 'center', 'center')};
-  background: #333;
-  border: 2px solid red;
+
   width: 100%;
   padding: 1rem;
   height: 12rem;
+  margin: 4rem 0;
   li,
   a {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.black};
+  }
+  li {
+    padding: 1rem;
+  }
+  a {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    width: 5rem;
+    display: block;
+    border-radius: 0.3em;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 2rem;
+    transition: ${({ theme }) => theme.transition.quickTransition};
+  }
+  #prev,
+  #next {
+    border: 2px solid ${({ theme }) => theme.colors.primary};
+    width: 12rem;
+    display: inline-block;
+    &:hover {
+      color: ${({ theme }) => theme.colors.white};
+      background: ${({ theme }) => theme.colors.primary};
+    }
+  }
+  #numLink {
+    position: relative;
+    &:after {
+      content: '';
+      height: 0.2rem;
+      background: ${({ theme }) => theme.colors.primary};
+      width: 0;
+      padding: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: ${({ theme }) => theme.transition.secondaryTransition};
+    }
+    &:hover {
+      &:after {
+        width: 100%;
+        padding: 0.2rem;
+      }
+    }
   }
 `
 

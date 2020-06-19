@@ -47,7 +47,7 @@ const theme: DefaultTheme = {
   },
   transition: {
     mainTransition: 'all .3s linear',
-    secondaryTransition: 'all 0.3s ease-in-out',
+    secondaryTransition: 'all 1s ease',
     quickTransition: 'all 200ms ease-in-out',
   },
 }
