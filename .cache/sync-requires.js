@@ -8,6 +8,7 @@ exports.components = {
   "component---cache-dev-404-page-js": hot(preferDefault(require("/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/.cache/dev-404-page.js"))),
   "component---src-pages-404-tsx": hot(preferDefault(require("/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/src/pages/404.tsx"))),
   "component---src-pages-about-tsx": hot(preferDefault(require("/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/src/pages/about.tsx"))),
+  "component---src-pages-contact-tsx": hot(preferDefault(require("/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/src/pages/contact.tsx"))),
   "component---src-pages-index-tsx": hot(preferDefault(require("/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/src/pages/index.tsx"))),
   "component---src-posts-fifth-post-index-mdx": hot(preferDefault(require("/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/src/posts/fifth-post/index.mdx"))),
   "component---src-posts-first-post-index-mdx": hot(preferDefault(require("/Users/masiuciszek/web-dev/myWebProj/jonkri_blog/src/posts/first-post/index.mdx"))),

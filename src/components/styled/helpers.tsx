@@ -1,6 +1,19 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { css } from 'styled-components'
 
+export const handleHref = (imgName: string) => {
+  switch (imgName) {
+    case 'jonkri':
+      return 'https://gitlab.com/jonkri'
+    case 'avancera':
+      return 'https://avancera.app/'
+    case 'marcellable':
+      return 'https://marcellable.com'
+    default:
+      return 'https://gitlab.com/jonkri'
+  }
+}
+
 type FlexDirection = 'row' | 'column' | 'column-reverse' | 'row-reverse'
 type JustifyContent =
   | 'center'

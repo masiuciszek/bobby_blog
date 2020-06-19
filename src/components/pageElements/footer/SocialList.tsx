@@ -2,7 +2,7 @@ import * as React from 'react'
 import { IFixedObject } from 'gatsby-background-image'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import { handleFlex } from '../../styled/helpers'
+import { handleFlex, handleHref } from '../../styled/helpers'
 interface Path {
   name: string
   path: string
@@ -23,19 +23,6 @@ interface Props {
 }
 
 const SocialList: React.FC<Props> = ({ onSocialIcons }) => {
-  const handleHref = (imgName: string) => {
-    switch (imgName) {
-      case 'jonkri':
-        return 'https://gitlab.com/jonkri'
-      case 'avancera':
-        return 'https://avancera.app/'
-      case 'marcellable':
-        return 'https://marcellable.com'
-      default:
-        return 'https://gitlab.com/jonkri'
-    }
-  }
-
   return (
     <SocialStyles>
       {onSocialIcons.map(x => (
