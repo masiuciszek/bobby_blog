@@ -5,9 +5,9 @@ module.exports = {
     description: `My simple blog about me and what I do`,
     about: `I am a programmer from Gothenburg who has a big passion for functional programing. My strengths and what I really likes the most is Javascript and Haskell`,
     author: `@marcellCiszek`,
-    twitterUsername: '@masiuciszek',
+    twitterUsername: '@jokri',
     image: '/images/icon.png',
-    siteUrl: 'https://marcelable.com',
+    siteUrl: 'https://marcell-jonkri-blog.netlify.app/',
     paths: [
       {
         name: 'about',
@@ -61,7 +61,7 @@ module.exports = {
       options: {
         name: `jonkri-blog`,
         short_name: `starter`,
-        start_url: `/`,
+        start_url: `https://marcell-jonkri-blog.netlify.app`,
         background_color: `#333`,
         theme_color: `#343434`,
         display: `minimal-ui`,

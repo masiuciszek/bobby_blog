@@ -6,7 +6,7 @@ import Seo from '../SEO/Seo'
 import { handleFlex } from '../styled/helpers'
 import Nav from '../pageElements/nav/Nav'
 import Footer from '../pageElements/footer/Footer'
-import { mainTheme, secondaryTheme } from './themes'
+import { mainTheme } from './themes'
 interface Props {
   children: React.ReactNode
 }
@@ -23,15 +23,11 @@ const Main = styled.main`
 `
 
 const Layout: React.FC<Props> = ({ children }) => {
-  const selectedTheme = localStorage.getItem('isLight')
-  const [isLight, setIsLight] = React.useState<boolean>(
-    selectedTheme === 'true' ? true : false
-  )
   return (
-    <ThemeProvider theme={isLight ? mainTheme : secondaryTheme}>
+    <ThemeProvider theme={mainTheme}>
       <Seo />
       <GlobalStyles />
-      <Nav onIsLight={isLight} onSetIsLight={setIsLight} />
+      <Nav />
       <Main>{children}</Main>
       <Footer />
     </ThemeProvider>

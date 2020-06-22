@@ -35,12 +35,9 @@ interface Query {
   }
 }
 
-interface Props {
-  onIsLight: boolean
-  onSetIsLight: React.Dispatch<React.SetStateAction<boolean>>
-}
+interface Props {}
 
-const Nav: React.FC<Props> = ({ onIsLight, onSetIsLight }) => {
+const Nav: React.FC<Props> = () => {
   const { site, icons } = useStaticQuery<Query>(NAV_QUERY)
   const [on, toggle] = useToggle(false)
   const [onInfo, toggleInfo] = useToggle(false)
@@ -63,15 +60,6 @@ const Nav: React.FC<Props> = ({ onIsLight, onSetIsLight }) => {
       <div id="menuLink" onClick={toggle}>
         <Img fixed={a.node.childImageSharp.fixed} alt={a.node.name} />
       </div>
-      <span
-        id="Theme-toggle"
-        onClick={() => {
-          onSetIsLight(!onIsLight)
-          localStorage.setItem('isLight', String(!onIsLight))
-        }}
-      >
-        {onIsLight ? '🌚' : '🌕'}
-      </span>
     </NavStyles>
   )
 }
@@ -96,17 +84,6 @@ const NavStyles = styled.nav<NavStylesProps>`
     display: none;
     ${below.medium`
       display: block;
-    `}
-  }
-  #Theme-toggle {
-    position: absolute;
-    top: 2rem;
-    right: 50%;
-    outline: 0;
-    cursor: pointer;
-    ${below.medium`
-      top: 5rem;
-      right: 1.2rem;
     `}
   }
 `
