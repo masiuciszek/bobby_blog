@@ -61,11 +61,44 @@ module.exports = {
       options: {
         name: `jonkri-blog`,
         short_name: `starter`,
-        start_url: `https://marcell-jonkri-blog.netlify.app`,
+        start_url: `/`,
         background_color: `#333`,
+        lang: 'en',
         theme_color: `#343434`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        icons: [
+          {
+            src: `/favicons/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/favicons/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+          {
+            src: `/favicons/apple-touch-icon.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/favicons/favicon-16x16.png`,
+            sizes: `16x16`,
+            type: `image/png`,
+          },
+          {
+            src: `/favicons/favicon.ico`,
+            sizes: `16x16`,
+            type: `image/ico`,
+          },
+          {
+            src: `/favicons/favicon-32x32.png`,
+            sizes: `32x32`,
+            type: `image/png`,
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
