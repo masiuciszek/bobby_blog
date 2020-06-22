@@ -9,10 +9,12 @@ interface Props {}
 
 const Contact: React.FC<Props> = () => {
   return (
-    <ContactStyles>
-      <SocialMedia />
-      <ContactForm className="ConcatForm" />
-    </ContactStyles>
+    <>
+      <ContactStyles>
+        <SocialMedia />
+        <ContactForm className="ConcatForm" />
+      </ContactStyles>
+    </>
   )
 }
 
@@ -24,8 +26,7 @@ const ContactStyles = styled.div`
   grid-gap: 15px;
   grid-template-rows: auto; */
   ${below.medium`
-  ${handleFlex('column-reverse', 'center', 'center')};
-
+    ${handleFlex('column-reverse', 'center', 'center')};
   `}
 `
 

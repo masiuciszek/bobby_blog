@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { IFixedObject } from 'gatsby-background-image'
 import Img from 'gatsby-image'
 import { handleFlex, handleHref } from '../styled/helpers'
+import { below } from '../styled/media'
 interface Node {
   node: {
     id: string
@@ -42,6 +43,7 @@ const SocialMedia: React.FC = () => {
 
 const StyledSocialMedia = styled(animated.ul)`
   padding: 1rem 3rem;
+  width: 40%;
   li {
     padding: 2rem 1rem;
     ${handleFlex('row', 'center', 'center')};
@@ -55,6 +57,9 @@ const StyledSocialMedia = styled(animated.ul)`
       margin-right: auto;
     }
   }
+  ${below.medium`
+    width: 60%;
+  `}
 `
 
 const SOCIAL_QUERY = graphql`

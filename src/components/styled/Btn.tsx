@@ -23,3 +23,12 @@ export const LinkStyled = styled(Link)`
     top: 0.6rem;
   }
 `
+
+export const Btn = styled(LinkStyled)`
+  border: 2px solid ${({ theme: { colors } }) => colors.primary};
+  margin: 2rem 0;
+  &:hover {
+    color: ${({ theme: { colors } }) => colors.white};
+    background: ${({ theme: { colors } }) => colors.primary};
+  }
+`
