@@ -6,7 +6,7 @@ import Title from '../components/pageElements/Title'
 const IndexPage = () => (
   <Layout>
     <Hero className="Home" large>
-      <Title xl title="Hello" subTitle="I am Jon" cta />
+      <Title xl title="Hello" subTitle="I am Bobby" cta />
     </Hero>
   </Layout>
 )

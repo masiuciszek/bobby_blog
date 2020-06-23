@@ -4,13 +4,13 @@ import { css } from 'styled-components'
 export const handleHref = (imgName: string) => {
   switch (imgName) {
     case 'jonkri':
-      return 'https://gitlab.com/jonkri'
+      return 'https://github.com/masiuciszek'
     case 'avancera':
-      return 'https://avancera.app/'
+      return 'https://masiuciszek.com/'
     case 'marcellable':
       return 'https://marcellable.com'
     default:
-      return 'https://gitlab.com/jonkri'
+      return 'https://github.com/masiuciszek'
   }
 }
 

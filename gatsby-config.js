@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `I am Jon`,
-    titleTemplate: '%s · Jonkri Master',
+    title: `I am Bobby`,
+    titleTemplate: '%s · Bobby Master',
     description: `My simple blog about me and what I do`,
-    about: `I am a programmer from Gothenburg who has a big passion for functional programing. My strengths and what I really likes the most is Javascript and Haskell`,
+    about: `I am a programmer from New York who has a big passion for functional programing. My strengths and what I really likes the most is Javascript and Haskell`,
     author: `@marcellCiszek`,
-    twitterUsername: '@jokri',
+    twitterUsername: '@CiszekMarcell',
     image: '/images/icon.png',
-    siteUrl: 'https://marcell-jonkri-blog.netlify.app/',
+    siteUrl: 'https://marcell-bobby-blog.netlify.app',
     paths: [
       {
         name: 'about',
